@@ -14,46 +14,25 @@
     "text": "Email: yiyuanli@reed.edu\nGitHub: yiyuanli939"
   },
   {
-    "objectID": "blog/posts/Sorting_Algorithm.html",
-    "href": "blog/posts/Sorting_Algorithm.html",
-    "title": "Sorting Algorithm: A Short List",
+    "objectID": "blog/posts/Selection_in_Regression.html",
+    "href": "blog/posts/Selection_in_Regression.html",
+    "title": "Selection on Observables using Regression",
     "section": "",
-    "text": "Code\ndef insertionSort(array):\n\n    for step in range(1, len(array)):\n        key = array[step]\n        j = step - 1\n        \n        # Compare key with each element on the left of it until an element smaller than it is found\n        # For descending order, change key&lt;array[j] to key&gt;array[j].        \n        while j &gt;= 0 and key &lt; array[j]:\n            array[j + 1] = array[j]\n            j = j - 1\n        \n        # Place key at after the element just smaller than it.\n        array[j + 1] = key"
+    "text": "This is a study note for Selection on Observables using Regression in Reed College’s Math 394 Causal Inference taught by professor Leonard Wainstein. The current note is not a simple repeititon on what had benn taugh in class. Instead, due to the fact that the therotical statstics is a “overly meaningful subject”, this notes hopes to explain the intutiton of each step as much as possible."
   },
   {
-    "objectID": "blog/posts/Simulation.html",
-    "href": "blog/posts/Simulation.html",
-    "title": "Causal Inference Review I: Randomization in R",
-    "section": "",
-    "text": "This tends to be a review on how to do simulation.\n\n\nCode\n# Your R code here\n\n# Here is a test r-code \n1 + 1\n\n\n[1] 2"
+    "objectID": "blog/posts/Selection_in_Regression.html#why-the-selection-on-observables-makes-sense",
+    "href": "blog/posts/Selection_in_Regression.html#why-the-selection-on-observables-makes-sense",
+    "title": "Selection on Observables using Regression",
+    "section": "Why the Selection on Observables makes sense?",
+    "text": "Why the Selection on Observables makes sense?\n\nConditional Ignorability\nThe beginning of selection on obserablles is the Conditional Ignorability (CI) or Conditional Ignorability Assumption (CIA) ,denoted as \\[\\left(Y_i(0), Y_i(1)\\right) \\perp D_i \\mid X_i\\] When we control \\(X\\), we can then think that the treatment becomes “as if random”. In other words, in each \\(X = x\\), the relationship between the response \\(Y\\) and the treatment \\(D\\) becomes “as if a randomization control experiment”."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome to My Website",
-    "section": "",
-    "text": "My name is Yiyuan Li (Chris). Now I’m a student in Reed College studying mathematics and statistics as major and computer science as minor.\nI decided to change my academic interest to statistics and computer science on March 14, 2023, the day GPT-4 launched, after studying the humanities for three years in undergraduate. Prior to this shift, I worked at the intersection of political theory and the history of science, with a focus on Newtonian and Darwinian political metaphors in the nineteenth century and the rise of quantification in mid-twentieth-century social sciences.\nThe rise of large language models (LLMs) raises concerns for me about the potential loss of human self-respect. Many current applications of LLMs (e.g., tools like Cursor) emphasize replacing human labor, following what I call the “Replacement Paradigm,” where technological advancements replace jobs that once gave people pride.\nI aspire to work within a different paradigm—one focused on human empowerment. My aim is to ensure that LLMs enhance human learning, fostering more profound reflection and discovery. LLMs should be tools that help us regain self-respect and boost our creative powers. My work seeks to advance the empowerment paradigm to preserving human dignity."
-  },
-  {
-    "objectID": "index.html#personl-interduction",
-    "href": "index.html#personl-interduction",
-    "title": "Welcome to My Website",
-    "section": "",
-    "text": "My name is Yiyuan Li (Chris). Now I’m a student in Reed College studying mathematics and statistics as major and computer science as minor.\nI decided to change my academic interest to statistics and computer science on March 14, 2023, the day GPT-4 launched, after studying the humanities for three years in undergraduate. Prior to this shift, I worked at the intersection of political theory and the history of science, with a focus on Newtonian and Darwinian political metaphors in the nineteenth century and the rise of quantification in mid-twentieth-century social sciences.\nThe rise of large language models (LLMs) raises concerns for me about the potential loss of human self-respect. Many current applications of LLMs (e.g., tools like Cursor) emphasize replacing human labor, following what I call the “Replacement Paradigm,” where technological advancements replace jobs that once gave people pride.\nI aspire to work within a different paradigm—one focused on human empowerment. My aim is to ensure that LLMs enhance human learning, fostering more profound reflection and discovery. LLMs should be tools that help us regain self-respect and boost our creative powers. My work seeks to advance the empowerment paradigm to preserving human dignity."
-  },
-  {
-    "objectID": "blog/posts/first-post.html",
-    "href": "blog/posts/first-post.html",
-    "title": "First Blog!",
-    "section": "",
-    "text": "Here is my first blog."
-  },
-  {
-    "objectID": "blog/posts/first-post.html#welcome-to-my-blog",
-    "href": "blog/posts/first-post.html#welcome-to-my-blog",
-    "title": "First Blog!",
-    "section": "Welcome to my blog",
-    "text": "Welcome to my blog\nToday, I created my first blog under the support of quarto! I’m so excited to share my thoughts and ideas with you. I hope you enjoy reading my posts and find them helpful."
+    "objectID": "blog/posts/Selection_in_Regression.html#term-insights-for-selection-on-observables",
+    "href": "blog/posts/Selection_in_Regression.html#term-insights-for-selection-on-observables",
+    "title": "Selection on Observables using Regression",
+    "section": "Term Insights for Selection on Observables",
+    "text": "Term Insights for Selection on Observables\n\nImportant Concepts\n\nConditional Ignorability \\(\\left(Y_i(0), Y_i(1)\\right) \\perp D_i \\mid X_i\\)\n\n\nCore assumption for selection on observables\nTreatment becomes “as if random” within X groups\nCreates “mini randomized experiments” within each X stratums\n\n\nPotential Outcomes \\((Y_i(0), Y_i(1))\\)\n\n\nY_i(0): Outcome if unit i not treated\nY_i(1): Outcome if unit i treated\nNever observe both for same unit (fundamental problem)\n\n\nLaw of Iterated Expectations \\(\\mathrm{E}(X)=\\mathrm{E}(\\mathrm{E}(X \\mid Y))\\)\n\n\nBreaks complex expectations into simpler parts\nAllows for “divide and conquer” approach\nIn here, we use E[Y(0)|D=1] = E(E[Y(0)|D=1,X]|D=1)\n\n\nidentification (in Causal Inference)\n\n\nIdentification in causal inference refers to the ability to express a causal parameter (like ATE) solely in terms of the observed data distribution.\nTry to overcome the problem of the Potential Outcome framework.\n\n\n\n\n\n\n\nNote\n\n\n\nThese terms form the foundation for understanding selection on observables. The intuition behind each concept is crucial for proper application in real-world settings."
   },
   {
     "objectID": "blog/posts/10_Necessary_Skills.html",
@@ -70,56 +49,56 @@
     "text": "I can compare/order asymptotic running times.\nI can find a concise big-O bound for a given function.\nI can analyze the running time of simple algorithms in the word-RAM model.\nI can solve recurrences.\nI can choose the most efficient data structure for a given problem/scenario.\nI can extend (i.e., implement a new operation for) a data structure I have seen before.\nI can illustrate the operation of insertion sort, mergesort, quicksort, and heapsort.\nI can illustrate the operation of fundamental graph algorithms (like BFS, DFS, and Bellman-Ford).\nI can determine the running time of a graph algorithm using either of the two standard graph representations.\nI can find a counterexample for a flawed greedy algorithm."
   },
   {
-    "objectID": "blog/index.html",
-    "href": "blog/index.html",
-    "title": "My Blog",
+    "objectID": "blog/posts/Simulation.html",
+    "href": "blog/posts/Simulation.html",
+    "title": "Causal Inference Review I: Simulation",
     "section": "",
-    "text": "Methods in Mathematics\n\n\n\n\n\n\nmathematics\n\n\n\nThis is a record on how to write mathematics proof well\n\n\n\n\n\nOct 25, 2024\n\n\nYiyuan Li\n\n\n\n\n\n\n\n\n\n\n\n\nTen Necessary Skills in Algorithm and Data Structure\n\n\n\n\n\n\nAlgorithm & Data Structure\n\n\n\nReview of Necessary Skills for Algorithm and Data Structure\n\n\n\n\n\nOct 14, 2024\n\n\nYiyuan Li\n\n\n\n\n\n\n\n\n\n\n\n\nSelection on Observables using Regression\n\n\n\n\n\n\nstatistics\n\n\n\nA Study of Selection on Variables in Causal Inference\n\n\n\n\n\nOct 14, 2024\n\n\nYiyuan Li\n\n\n\n\n\n\n\n\n\n\n\n\nFront-door Criterion I\n\n\n\n\n\n\ncausal inference\n\n\n\nThis tends to be a review on Simulation\n\n\n\n\n\nSep 27, 2024\n\n\nYiyuan Li\n\n\n\n\n\n\n\n\n\n\n\n\nCausal Inference Review I: Randomization in R\n\n\n\n\n\n\nstatistics\n\n\n\nThis tends to be a review on Simulation\n\n\n\n\n\nSep 27, 2024\n\n\nYiyuan Li\n\n\n\n\n\n\n\n\n\n\n\n\nSorting Algorithm: A Short List\n\n\n\n\n\n\nAlgorithm & Data Structure\n\n\n\nA Short Review on All Algorithm Learned in CSCI 382\n\n\n\n\n\nSep 27, 2024\n\n\nYiyuan Li\n\n\n\n\n\n\nNo matching items",
-    "crumbs": [
-      "Blog",
-      "My Blog"
-    ]
+    "text": "This tends to be a review on how to do simulation. In this blog, we want to present a simulation of the front door estimation in causal inference. The setting is created by Bellemare and Bloem on their paper draft The Paper of How: Estimating Treatment Effects Using the Front-Door Criterion in 2020.\nOur simulation setup is as follows. Let \\(U_i \\sim N(0,1), Z_i \\sim U(0,1), \\epsilon_{X_i} \\sim N(0,1), \\epsilon_{M_i} \\sim N(0,1)\\), and \\(\\epsilon{\\gamma_i} \\sim N(0,1)\\) for a sample size of \\(N=100,000\\) observations. Then, let \\[\nX_i=0.5 U_i+\\epsilon_{X_i},\n\\] \\[\nM_i=Z_i Xi+\\epsilon_{M_i},\n\\] and \\[\nY_i=0.5 M_i+0.5 U_i+\\epsilon{\\mathrm{Y_i}}\n\\]\n\nTurn the simulation into Pseudocode\nThe pseudocode is an revision from Claude 3.5’s generation.\nALGORITHM: Front Door Criterion Simulation\n\nBEGIN\n    SET random seed for reproducibility\n    \n    // Generate random variables\n    FOR i = 1 to N DO\n        U[i] ← DRAW from Normal(mean=0, sd=1)\n        Z[i] ← DRAW from Uniform(min=0, max=1)\n        epsilon_X[i] ← DRAW from Normal(mean=0, sd=1)\n        epsilon_M[i] ← DRAW from Normal(mean=0, sd=1)\n        epsilon_Y[i] ← DRAW from Normal(mean=0, sd=1)\n    END FOR\n\n    // Generate structural equations\n    FOR i = 1 to N DO\n        // First equation\n        X[i] ← 0.5 * U[i] + epsilon_X[i]\n        \n        // Second equation\n        M[i] ← Z[i] * X[i] + epsilon_M[i]\n        \n        // Third equation\n        Y[i] ← 0.5 * M[i] + 0.5 * U[i] + epsilon_Y[i]\n    END FOR\n\n    // Store results\n    CREATE data structure containing:\n        - Input variables: U, Z\n        - Error terms: epsilon_X, epsilon_M, epsilon_Y\n        - Structural variables: X, M, Y\n\nEND\n\nOUTPUT:\n    Dataset containing all generated variables\n    Summary statistics\nFrom the Pseudocode, we can observe that\n\n\nTurn the Simulation into Python\n\n\nCode\nimport numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt"
   },
   {
-    "objectID": "blog/posts/Selection_in_Regression.html",
-    "href": "blog/posts/Selection_in_Regression.html",
-    "title": "Selection on Observables using Regression",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to My Website",
     "section": "",
-    "text": "This is a study note for Selection on Observables using Regression in Reed College’s Math 394 Causal Inference taught by professor Leonard Wainstein. The current note is not a simple repeititon on what had benn taugh in class. Instead, due to the fact that the therotical statstics is a “overly meaningful subject”, this notes hopes to explain the intutiton of each step as much as possible."
+    "text": "My name is Yiyuan Li (Chris). Now I’m a student in Reed College studying mathematics and statistics as major and computer science as minor.\nI decided to change my academic interest to statistics and computer science on March 14, 2023, the day GPT-4 launched, after studying the humanities for three years in undergraduate. Prior to this shift, I worked at the intersection of political theory and the history of science, with a focus on Newtonian and Darwinian political metaphors in the nineteenth century and the rise of quantification in mid-twentieth-century social sciences.\nThe rise of large language models (LLMs) raises concerns for me about the potential loss of human self-respect. Many current applications of LLMs (e.g., tools like Cursor) emphasize replacing human labor, following what I call the “Replacement Paradigm,” where technological advancements replace jobs that once gave people pride.\nI aspire to work within a different paradigm—one focused on human empowerment. My aim is to ensure that LLMs enhance human learning, fostering more profound reflection and discovery. LLMs should be tools that help us regain self-respect and boost our creative powers. My work seeks to advance the empowerment paradigm to preserving human dignity."
   },
   {
-    "objectID": "blog/posts/Selection_in_Regression.html#term-insights-for-selection-on-observables",
-    "href": "blog/posts/Selection_in_Regression.html#term-insights-for-selection-on-observables",
-    "title": "Selection on Observables using Regression",
-    "section": "Term Insights for Selection on Observables",
-    "text": "Term Insights for Selection on Observables\n\nImportant Concepts\n\nConditional Ignorability \\(\\left(Y_i(0), Y_i(1)\\right) \\perp D_i \\mid X_i\\)\n\n\nCore assumption for selection on observables\nTreatment becomes “as if random” within X groups\nCreates “mini randomized experiments” within each X stratums\n\n\nPotential Outcomes \\((Y_i(0), Y_i(1))\\)\n\n\nY_i(0): Outcome if unit i not treated\nY_i(1): Outcome if unit i treated\nNever observe both for same unit (fundamental problem)\n\n\nLaw of Iterated Expectations \\(\\mathrm{E}(X)=\\mathrm{E}(\\mathrm{E}(X \\mid Y))\\)\n\n\nBreaks complex expectations into simpler parts\nAllows for “divide and conquer” approach\nIn here, we use E[Y(0)|D=1] = E(E[Y(0)|D=1,X]|D=1)\n\n\nidentification (in Causal Inference)\n\n\nIdentification in causal inference refers to the ability to express a causal parameter (like ATE) solely in terms of the observed data distribution.\nTry to overcome the problem of the Potential Outcome framework.\n\n\n\n\n\n\n\nNote\n\n\n\nThese terms form the foundation for understanding selection on observables. The intuition behind each concept is crucial for proper application in real-world settings."
-  },
-  {
-    "objectID": "blog/posts/Selection_in_Regression.html#why-the-selection-on-observables-makes-sense",
-    "href": "blog/posts/Selection_in_Regression.html#why-the-selection-on-observables-makes-sense",
-    "title": "Selection on Observables using Regression",
-    "section": "Why the Selection on Observables makes sense?",
-    "text": "Why the Selection on Observables makes sense?\n\nConditional Ignorability\nThe beginning of selection on obserablles is the Conditional Ignorability (CI) or Conditional Ignorability Assumption (CIA) ,denoted as \\[\\left(Y_i(0), Y_i(1)\\right) \\perp D_i \\mid X_i\\] When we control \\(X\\), we can then think that the treatment becomes “as if random”. In other words, in each \\(X = x\\), the relationship between the response \\(Y\\) and the treatment \\(D\\) becomes “as if a randomization control experiment”."
-  },
-  {
-    "objectID": "blog/posts/Math-Method.html",
-    "href": "blog/posts/Math-Method.html",
-    "title": "Methods in Mathematics",
+    "objectID": "index.html#personl-interduction",
+    "href": "index.html#personl-interduction",
+    "title": "Welcome to My Website",
     "section": "",
-    "text": "Take notes. Reorganize them. Write proofs. Review them. These are the most simplistic abstraction on how to build my maths tool box.\n\nHow to Analyze a Proof\nIn the next part, there is a question that is worthwhile to consider how to write a good proof.\nIn this question you will investigate connections between different types of convergences of sequences of continuous functions. Let \\(\\left\\{f_n\\right\\} \\subseteq C[a, b]\\), recall that we defined pointwise and uniform convergence in class. Let \\(f:[a, b] \\rightarrow \\mathbb{R}\\) be a function, we say that \\(f_n\\) converges to \\(f\\) in \\(L^2\\) if\n\\[\n\\lim _{n \\rightarrow \\infty} \\int_a^b\\left(f_n(x)-f(x)\\right)^2 d x \\rightarrow 0 \\text { as } n \\rightarrow \\infty .\n\\]\n(Here we are assuming the integral exists for all \\(n \\in \\mathbb{N}\\) ).\n\nShow that uniform convergence implies pointwise convergence\nShow that uniform convergence implies convergence in \\(L^2\\).\nIn class we showed that pointwise convergence does not imply uniform convergence. Show that convergence in \\(L^2\\) also does not imply uniform convergence.\n\nFirst, we want to analyze the proof of the first part of the proof.\n\n\n\n\n\n\nProof (a)\n\n\n\nIn \\(C[a,b]\\), we have \\(f_n \\to f\\) pointwisely if for all \\(x \\in [a,b]\\), for any \\(\\epsilon &gt; 0\\), there exists \\(N = N(\\epsilon,x)\\) such that \\(|f_n(x) - f(x)| &lt; \\epsilon\\) for all \\(n \\geq N\\). Suppose \\(f_n \\to f\\) uniformly. Then, for any \\(\\epsilon &gt; 0\\), there exists \\(N = N(\\epsilon)\\) such that \\(|f_n(x) - f(x)| &lt; \\epsilon\\) for all \\(n \\geq N\\) and for all \\(x \\in [a,b]\\). Thus, if the sequence \\({f_n}\\) converges uniformly, for every \\(\\epsilon &gt; 0\\) and every \\(x \\in [a,b]\\) we can choose this same \\(N = N(\\epsilon)\\) such that \\[\n|f_n(x) - f(x)| &lt; \\epsilon\n\\] This means the sequence converges to \\(f \\in C[a,b]\\) pointwisely, since having an \\(N\\) that works for all \\(x\\) certainly gives us an \\(N\\) that works for each individual \\(x\\).\n\n\nThen, we start to analysis.\n\n\n\n\n\n\nProof with Step-by-Step Motivation\n\n\n\n\nStatement:\nIn \\(C[a,b]\\), we have \\(f_n \\to f\\) pointwisely if for all \\(x \\in [a,b]\\), for any \\(\\epsilon &gt; 0\\), there exists \\(N = N(\\epsilon,x)\\) such that \\(|f_n(x) - f(x)| &lt; \\epsilon\\) for all \\(n \\geq N\\).\n[Motivation: Start with the formal definition of pointwise convergence, which is our target to prove.]\nStatement:\nSuppose \\(f_n \\to f\\) uniformly.\n[Motivation: State our given condition, which is what we’ll use to prove pointwise convergence.]\nStatement:\nThen, for any \\(\\epsilon &gt; 0\\), there exists \\(N = N(\\epsilon)\\) such that \\(|f_n(x) - f(x)| &lt; \\epsilon\\) for all \\(n \\geq N\\) and for all \\(x \\in [a,b]\\).\n[Motivation: Write out the definition of uniform convergence, noting that N depends only on \\(\\epsilon\\), not on x.]\nStatement:\nThus, if the sequence \\({f_n}\\) converges uniformly, for every \\(\\epsilon &gt; 0\\) and every \\(x \\in [a,b]\\) we can choose this same \\(N = N(\\epsilon)\\) such that \\(|f_n(x) - f(x)| &lt; \\epsilon\\).\n[Motivation: Rephrase the uniform convergence condition to highlight that N works for every x.]\nStatement:\nThis means the sequence converges to \\(f \\in C[a,b]\\) pointwisely, since having an \\(N\\) that works for all \\(x\\) certainly gives us an \\(N\\) that works for each individual \\(x\\).\n[Motivation: Conclude by showing that uniform convergence satisfies pointwise convergence definition, as a stronger condition implies a weaker one.]\n\n\n\nIf we can notify the motivation of each sentence of our proof, we can be more aware on how the proof works."
-  },
-  {
-    "objectID": "blog/posts/Math-Method.html#welcome-to-my-blog",
-    "href": "blog/posts/Math-Method.html#welcome-to-my-blog",
-    "title": "First Blog!",
-    "section": "Welcome to my blog",
-    "text": "Welcome to my blog\nToday, I created my first blog under the support of quarto! I’m so excited to share my thoughts and ideas with you. I hope you enjoy reading my posts and find them helpful."
+    "text": "My name is Yiyuan Li (Chris). Now I’m a student in Reed College studying mathematics and statistics as major and computer science as minor.\nI decided to change my academic interest to statistics and computer science on March 14, 2023, the day GPT-4 launched, after studying the humanities for three years in undergraduate. Prior to this shift, I worked at the intersection of political theory and the history of science, with a focus on Newtonian and Darwinian political metaphors in the nineteenth century and the rise of quantification in mid-twentieth-century social sciences.\nThe rise of large language models (LLMs) raises concerns for me about the potential loss of human self-respect. Many current applications of LLMs (e.g., tools like Cursor) emphasize replacing human labor, following what I call the “Replacement Paradigm,” where technological advancements replace jobs that once gave people pride.\nI aspire to work within a different paradigm—one focused on human empowerment. My aim is to ensure that LLMs enhance human learning, fostering more profound reflection and discovery. LLMs should be tools that help us regain self-respect and boost our creative powers. My work seeks to advance the empowerment paradigm to preserving human dignity."
   },
   {
     "objectID": "blog/posts/Front_Door.html",
     "href": "blog/posts/Front_Door.html",
     "title": "Front-door Criterion I",
     "section": "",
-    "text": "This is an analysis on the front-end estimation in causal inference."
+    "text": "This is an analysis on the front-door estimation in causal inference."
+  },
+  {
+    "objectID": "blog/posts/Sorting_Algorithm.html",
+    "href": "blog/posts/Sorting_Algorithm.html",
+    "title": "Sorting Algorithm: A Short List",
+    "section": "",
+    "text": "Code\ndef insertionSort(array):\n\n    for step in range(1, len(array)):\n        key = array[step]\n        j = step - 1\n        \n        # Compare key with each element on the left of it until an element smaller than it is found\n        # For descending order, change key&lt;array[j] to key&gt;array[j].        \n        while j &gt;= 0 and key &lt; array[j]:\n            array[j + 1] = array[j]\n            j = j - 1\n        \n        # Place key at after the element just smaller than it.\n        array[j + 1] = key"
+  },
+  {
+    "objectID": "blog/posts/Math-Method.html",
+    "href": "blog/posts/Math-Method.html",
+    "title": "Methods in Mathematics",
+    "section": "",
+    "text": "Take notes. Reorganize them. Write proofs. Review them. These are the most simplistic abstraction on how to build my maths tool box.\n\nHow to Analyze a Proof\nIn the next part, there is a question that is worthwhile to consider how to write a good proof.\nIn this question you will investigate connections between different types of convergences of sequences of continuous functions. Let \\(\\left\\{f_n\\right\\} \\subseteq C[a, b]\\), recall that we defined pointwise and uniform convergence in class. Let \\(f:[a, b] \\rightarrow \\mathbb{R}\\) be a function, we say that \\(f_n\\) converges to \\(f\\) in \\(L^2\\) if\n\\[\n\\lim _{n \\rightarrow \\infty} \\int_a^b\\left(f_n(x)-f(x)\\right)^2 d x \\rightarrow 0 \\text { as } n \\rightarrow \\infty .\n\\]\n(Here we are assuming the integral exists for all \\(n \\in \\mathbb{N}\\) ).\n\nShow that uniform convergence implies pointwise convergence\nShow that uniform convergence implies convergence in \\(L^2\\).\nIn class we showed that pointwise convergence does not imply uniform convergence. Show that convergence in \\(L^2\\) also does not imply uniform convergence.\n\nFirst, we want to analyze the proof of the first part of the proof.\n\n\n\n\n\n\nProof (a)\n\n\n\nIn \\(C[a,b]\\), we have \\(f_n \\to f\\) pointwisely if for all \\(x \\in [a,b]\\), for any \\(\\epsilon &gt; 0\\), there exists \\(N = N(\\epsilon,x)\\) such that \\(|f_n(x) - f(x)| &lt; \\epsilon\\) for all \\(n \\geq N\\). Suppose \\(f_n \\to f\\) uniformly. Then, for any \\(\\epsilon &gt; 0\\), there exists \\(N = N(\\epsilon)\\) such that \\(|f_n(x) - f(x)| &lt; \\epsilon\\) for all \\(n \\geq N\\) and for all \\(x \\in [a,b]\\). Thus, if the sequence \\({f_n}\\) converges uniformly, for every \\(\\epsilon &gt; 0\\) and every \\(x \\in [a,b]\\) we can choose this same \\(N = N(\\epsilon)\\) such that \\[\n|f_n(x) - f(x)| &lt; \\epsilon\n\\] This means the sequence converges to \\(f \\in C[a,b]\\) pointwisely, since having an \\(N\\) that works for all \\(x\\) certainly gives us an \\(N\\) that works for each individual \\(x\\).\n\n\nThen, we start to analysis.\n\n\n\n\n\n\nProof with Step-by-Step Motivation\n\n\n\n\nStatement:\nIn \\(C[a,b]\\), we have \\(f_n \\to f\\) pointwisely if for all \\(x \\in [a,b]\\), for any \\(\\epsilon &gt; 0\\), there exists \\(N = N(\\epsilon,x)\\) such that \\(|f_n(x) - f(x)| &lt; \\epsilon\\) for all \\(n \\geq N\\).\n[Motivation: Start with the formal definition of pointwise convergence, which is our target to prove.]\nStatement:\nSuppose \\(f_n \\to f\\) uniformly.\n[Motivation: State our given condition, which is what we’ll use to prove pointwise convergence.]\nStatement:\nThen, for any \\(\\epsilon &gt; 0\\), there exists \\(N = N(\\epsilon)\\) such that \\(|f_n(x) - f(x)| &lt; \\epsilon\\) for all \\(n \\geq N\\) and for all \\(x \\in [a,b]\\).\n[Motivation: Write out the definition of uniform convergence, noting that N depends only on \\(\\epsilon\\), not on x.]\nStatement:\nThus, if the sequence \\({f_n}\\) converges uniformly, for every \\(\\epsilon &gt; 0\\) and every \\(x \\in [a,b]\\) we can choose this same \\(N = N(\\epsilon)\\) such that \\(|f_n(x) - f(x)| &lt; \\epsilon\\).\n[Motivation: Rephrase the uniform convergence condition to highlight that N works for every x.]\nStatement:\nThis means the sequence converges to \\(f \\in C[a,b]\\) pointwisely, since having an \\(N\\) that works for all \\(x\\) certainly gives us an \\(N\\) that works for each individual \\(x\\).\n[Motivation: Conclude by showing that uniform convergence satisfies pointwise convergence definition, as a stronger condition implies a weaker one.]\n\n\n\nIf we can notify the motivation of each sentence of our proof, we can be more aware on how the proof works. Use your pen. Start to draw from the beginning of a sentence and stop at the period. Then ask:\n“What is the motivation of this, specific sentence?”\nSuch a interrogation is a methodology from my reading of Heidegger’s Being and Time. But many mathemataicains definitely use this without studying philosophy. For me, all my methodology are from my philosophical education in my first three year in"
+  },
+  {
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "My Blog",
+    "section": "",
+    "text": "Methods in Mathematics\n\n\n\n\n\n\nmathematics\n\n\n\nThis is a record on how to write mathematics proof well\n\n\n\n\n\nOct 25, 2024\n\n\nYiyuan Li\n\n\n\n\n\n\n\n\n\n\n\n\nTen Necessary Skills in Algorithm and Data Structure\n\n\n\n\n\n\nAlgorithm & Data Structure\n\n\n\nReview of Necessary Skills for Algorithm and Data Structure\n\n\n\n\n\nOct 14, 2024\n\n\nYiyuan Li\n\n\n\n\n\n\n\n\n\n\n\n\nSelection on Observables using Regression\n\n\n\n\n\n\nstatistics\n\n\n\nA Study of Selection on Variables in Causal Inference\n\n\n\n\n\nOct 14, 2024\n\n\nYiyuan Li\n\n\n\n\n\n\n\n\n\n\n\n\nFront-door Criterion I\n\n\n\n\n\n\ncausal inference\n\n\n\nThis tends to be a review on Simulation\n\n\n\n\n\nSep 27, 2024\n\n\nYiyuan Li\n\n\n\n\n\n\n\n\n\n\n\n\nCausal Inference Review I: Simulation\n\n\n\n\n\n\nstatistics\n\n\n\nThis is a review of simulation, an important technique in the study of causal inference\n\n\n\n\n\nSep 27, 2024\n\n\nYiyuan Li\n\n\n\n\n\n\n\n\n\n\n\n\nSorting Algorithm: A Short List\n\n\n\n\n\n\nAlgorithm & Data Structure\n\n\n\nA Short Review on All Algorithm Learned in CSCI 382\n\n\n\n\n\nSep 27, 2024\n\n\nYiyuan Li\n\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Blog",
+      "My Blog"
+    ]
   }
 ]

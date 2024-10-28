@@ -1,6 +1,6 @@
 ---
-title: "Causal Inference Review I: Randomization in R"
-description: "This tends to be a review on Simulation"
+title: "Causal Inference Review I: Simulation"
+description: "This is a review of simulation, an important technique in the study of causal inference"
 author: "Yiyuan Li"
 date: "2024-09-27"
 categories: [statistics]
@@ -10,15 +10,82 @@ format:
     code-tools: true
 ---
 
-This tends to be a review on how to do simulation. 
+This tends to be a review on how to do simulation. In this blog, we want to present a simulation of the front door estimation in causal inference. The setting is created by Bellemare and Bloem on their paper draft *The Paper of How: Estimating Treatment Effects Using the Front-Door Criterion* in 2020. 
 
-```{r}
-#| code-fold: true
-#| code-summary: "Code"
+Our simulation setup is as follows. Let $U_i \sim N(0,1), Z_i \sim U(0,1), \epsilon_{X_i} \sim N(0,1), \epsilon_{M_i} \sim N(0,1)$, and $\epsilon{\gamma_i} \sim N(0,1)$ for a sample size of $N=100,000$ observations. Then, let
+$$
+X_i=0.5 U_i+\epsilon_{X_i},
+$$
+$$
+M_i=Z_i Xi+\epsilon_{M_i},
+$$
+and
+$$
+Y_i=0.5 M_i+0.5 U_i+\epsilon{\mathrm{Y_i}}
+$$
 
-# Your R code here
+### Turn the simulation into Pseudocode
 
-# Here is a test r-code 
-1 + 1
+The pseudocode is an revision from Claude 3.5's generation. 
+```{.python}
+ALGORITHM: Front Door Criterion Simulation
+
+BEGIN
+    SET random seed for reproducibility
+    
+    // Generate random variables
+    FOR i = 1 to N DO
+        U[i] ← DRAW from Normal(mean=0, sd=1)
+        Z[i] ← DRAW from Uniform(min=0, max=1)
+        epsilon_X[i] ← DRAW from Normal(mean=0, sd=1)
+        epsilon_M[i] ← DRAW from Normal(mean=0, sd=1)
+        epsilon_Y[i] ← DRAW from Normal(mean=0, sd=1)
+    END FOR
+
+    // Generate structural equations
+    FOR i = 1 to N DO
+        // First equation
+        X[i] ← 0.5 * U[i] + epsilon_X[i]
+        
+        // Second equation
+        M[i] ← Z[i] * X[i] + epsilon_M[i]
+        
+        // Third equation
+        Y[i] ← 0.5 * M[i] + 0.5 * U[i] + epsilon_Y[i]
+    END FOR
+
+    // Store results
+    CREATE data structure containing:
+        - Input variables: U, Z
+        - Error terms: epsilon_X, epsilon_M, epsilon_Y
+        - Structural variables: X, M, Y
+
+END
+
+OUTPUT:
+    Dataset containing all generated variables
+    Summary statistics
 ```
+
+From the Pseudocode, we can observe that 
+
+
+### Turn the Simulation into Python
+
+```{python}
+#| label: python-simulation
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+```
+
+
+
+
+
+
+
+
+
+
 
