@@ -2,11 +2,12 @@
   {
     "listing": "/blog/index.html",
     "items": [
+      "/blog/posts/Math-Method.html",
       "/blog/posts/10_Necessary_Skills.html",
-      "/blog/posts/Linear_Regression_in_Causal.html",
+      "/blog/posts/Selection_in_Regression.html",
+      "/blog/posts/Front_Door.html",
       "/blog/posts/Simulation.html",
-      "/blog/posts/Sorting_Algorithm.html",
-      "/blog/posts/first-post.html"
+      "/blog/posts/Sorting_Algorithm.html"
     ]
   }
 ]

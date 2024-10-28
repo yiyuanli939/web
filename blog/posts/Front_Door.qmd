@@ -1,11 +1,13 @@
 ---
-title: "Liner "
+title: "Front-door Criterion I"
 description: "This tends to be a review on Simulation"
 author: "Yiyuan Li"
 date: "2024-09-27"
-categories: [statistics，causal inference]
+categories: [causal inference]
 format:
   html:
     code-fold: false
     code-tools: false
 ---
+
+This is an analysis on the front-door estimation in causal inference. 

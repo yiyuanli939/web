@@ -1,0 +1,91 @@
+---
+title: "Methods in Mathematics"
+description: "This is a record on how to write mathematics proof well"
+author: "Yiyuan Li"
+date: "2024-10-25"
+categories: [mathematics]
+---
+
+Take notes. Reorganize them. Write proofs. Review them. These are the most simplistic abstraction on 
+how to build my maths tool box. 
+
+### How to Analyze a Proof 
+
+In the next part, there is a question that is worthwhile to consider how to write a good proof. 
+
+In this question you will investigate connections between different types of convergences of sequences of continuous functions. Let $\left\{f_n\right\} \subseteq C[a, b]$, recall that we defined pointwise and uniform convergence in class. Let $f:[a, b] \rightarrow \mathbb{R}$ be a function, we say that $f_n$ converges to $f$ in $L^2$ if
+
+$$
+\lim _{n \rightarrow \infty} \int_a^b\left(f_n(x)-f(x)\right)^2 d x \rightarrow 0 \text { as } n \rightarrow \infty .
+$$
+
+(Here we are assuming the integral exists for all $n \in \mathbb{N}$ ).
+
+(a) Show that uniform convergence implies pointwise convergence
+
+(b) Show that uniform convergence implies convergence in $L^2$.
+
+(c) In class we showed that pointwise convergence does not imply uniform convergence. Show that convergence in $L^2$ also does not imply uniform convergence.
+
+First, we want to analyze the proof of the first part of the proof. 
+
+::: {.callout-note appearance="simple"}
+### Proof (a)
+
+In $C[a,b]$, we have $f_n \to f$ pointwisely if for all $x \in [a,b]$, for any $\epsilon > 0$, there exists
+$N = N(\epsilon,x)$ such that $|f_n(x) - f(x)| < \epsilon$ for all $n \geq N$.
+Suppose $f_n \to f$ uniformly. Then, for any $\epsilon > 0$, there exists $N = N(\epsilon)$ such that
+$|f_n(x) - f(x)| < \epsilon$ for all $n \geq N$ and for all $x \in [a,b]$. Thus, if the sequence ${f_n}$
+converges uniformly, for every $\epsilon > 0$ and every $x \in [a,b]$ we can choose this same $N = N(\epsilon)$ such that
+$$
+|f_n(x) - f(x)| < \epsilon
+$$
+This means the sequence converges to $f \in C[a,b]$ pointwisely, since having 
+an $N$ that works for all $x$ certainly gives us an $N$ that works for each individual $x$.
+
+:::
+
+Then, we start to analysis.
+
+:::{.callout-note appearance="simple"}
+## Proof with Step-by-Step Motivation
+
+1. **Statement**:  
+   In $C[a,b]$, we have $f_n \to f$ pointwisely if for all $x \in [a,b]$, for any $\epsilon > 0$, there exists
+   $N = N(\epsilon,x)$ such that $|f_n(x) - f(x)| < \epsilon$ for all $n \geq N$.
+   
+   [**Motivation**: Start with the formal definition of pointwise convergence, which is our target to prove.]
+
+2. **Statement**:  
+   Suppose $f_n \to f$ uniformly.
+   
+   [**Motivation**: State our given condition, which is what we'll use to prove pointwise convergence.]
+
+3. **Statement**:  
+   Then, for any $\epsilon > 0$, there exists $N = N(\epsilon)$ such that $|f_n(x) - f(x)| < \epsilon$ 
+   for all $n \geq N$ and for all $x \in [a,b]$.
+   
+   [**Motivation**: Write out the definition of uniform convergence, noting that N depends only on $\epsilon$, not on x.]
+
+4. **Statement**:  
+   Thus, if the sequence ${f_n}$ converges uniformly, for every $\epsilon > 0$ and every $x \in [a,b]$ we can choose this same $N = N(\epsilon)$ such that
+   $|f_n(x) - f(x)| < \epsilon$.
+   
+   [**Motivation**: Rephrase the uniform convergence condition to highlight that N works for every x.]
+
+5. **Statement**:  
+   This means the sequence converges to $f \in C[a,b]$ pointwisely, since having 
+   an $N$ that works for all $x$ certainly gives us an $N$ that works for each individual $x$.
+   
+   [**Motivation**: Conclude by showing that uniform convergence satisfies pointwise convergence definition, 
+   as a stronger condition implies a weaker one.]
+:::
+
+If we can notify the motivation of each sentence of our proof, we can be more aware on how the proof works. 
+Use your pen. Start to draw from the beginning of a sentence and stop at the period. Then ask:
+
+"What is the motivation of this, specific sentence?"
+
+Such a interrogation is a methodology from my reading of Heidegger's `Being and Time`. But many mathemataicains 
+definitely use this without studying philosophy. For me, all my methodology are from my philosophical education 
+in my first three year in  

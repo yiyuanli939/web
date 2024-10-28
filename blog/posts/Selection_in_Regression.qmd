@@ -1,0 +1,60 @@
+---
+title: "Selection on Observables using Regression"
+description: "A Study of Selection on Variables in Causal Inference"
+author: "Yiyuan Li"
+date: "2024-10-14"
+categories: [statistics]
+format:
+  html:
+    code-fold: true
+    code-tools: true
+---
+
+This is a study note for Selection on Observables using Regression in Reed College's Math 394 Causal Inference 
+taught by professor Leonard Wainstein. The current note is not a simple repeititon on what had benn taugh in class. 
+Instead, due to the fact that the therotical statstics is a "overly meaningful subject", this notes hopes to explain 
+the intutiton of each step as much as possible.
+
+## Why the Selection on Observables makes sense? 
+
+### Conditional Ignorability
+
+The beginning of selection on obserablles is the Conditional Ignorability (CI) or Conditional Ignorability Assumption (CIA)
+,denoted as
+$$\left(Y_i(0), Y_i(1)\right) \perp D_i \mid X_i$$
+When we control $X$, we can then think that the treatment becomes "as if random". In other words, in each $X = x$,
+the relationship between the response $Y$ and the treatment $D$ becomes "as if a randomization control experiment".
+
+
+## Term Insights for Selection on Observables
+
+### Important Concepts
+
+1. **Conditional Ignorability** $\left(Y_i(0), Y_i(1)\right) \perp D_i \mid X_i$
+- Core assumption for selection on observables
+- Treatment becomes "as if random" within X groups
+- Creates "mini randomized experiments" within each X stratums
+
+2. **Potential Outcomes** $(Y_i(0), Y_i(1))$
+- Y_i(0): Outcome if unit i not treated
+- Y_i(1): Outcome if unit i treated
+- Never observe both for same unit (fundamental problem)
+
+
+3. **Law of Iterated Expectations** $\mathrm{E}(X)=\mathrm{E}(\mathrm{E}(X \mid Y))$
+- Breaks complex expectations into simpler parts
+- Allows for "divide and conquer" approach
+- In here, we use E[Y(0)|D=1] = E(E[Y(0)|D=1,X]|D=1)
+
+
+4. **identification (in Causal Inference)**
+- Identification in causal inference refers to the ability to express a causal parameter (like ATE) 
+solely in terms of the observed data distribution.
+- Try to overcome the problem of the Potential Outcome framework. 
+
+
+
+
+::: {.callout-note}
+These terms form the foundation for understanding selection on observables. The intuition behind each concept is crucial for proper application in real-world settings.
+:::
